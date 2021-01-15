@@ -1,0 +1,15 @@
+<h1>Attractions</h1>
+<table class="table">
+   
+    <% Attraction.all.each do |attraction| %>
+
+        <%if current_user.admin%>
+         <%=link_to "Show #{attraction.name}", attraction_path(attraction)%><br>
+   <%else%>
+         <%=link_to "Go on #{attraction.name}", attraction_path(attraction)%><br>
+   <%end%>
+<%end%>
+<br>
+<%if current_user.admin%>
+   <%=link_to "New Attraction", new_attraction_path%><br>
+<%end%>
