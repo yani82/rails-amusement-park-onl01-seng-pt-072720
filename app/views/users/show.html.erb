@@ -1,0 +1,19 @@
+<% if flash[:message] %>
+  <div class="center alert">
+    <p><%= flash[:message] %></p>
+  </div>
+<% end %>
+
+<% if @user.admin == true %>
+  <h1>ADMIN</h1>
+<% end %>
+
+Name: <%=@user.name%><br>
+Height: <%=@user.height%><br>
+Happiness Level: <%=@user.happiness%><br>
+Nausea Level: <%=@user.nausea%><br>
+Number of Tickets: <%=@user.tickets%><br>
+Mood: <%=@user.mood%><br>
+<%=link_to "See attractions", attractions_path%><br>
+<%=link_to "Log Out", '/logout'%>
+
